@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr-FR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+    integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+    crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+    crossorigin="" defer></script>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="/js/main.js" defer></script>
+  <script src="https://kit.fontawesome.com/2f94c2c9d3.js" crossorigin="anonymous"></script>
+  <title>Réservation Vélo</title>
+</head>
+
+<body>
+  <div class="diaporama">
+    <figure class="diaporama_img active">
+      <figcaption>1. Sélectionnez une station en cliquant sur un marqueur.</figcaption>
+      <img src="/images/diaporama1.jpg" alt="Diaporama">
+    </figure>
+    <figure class="diaporama_img">
+      <figcaption>2. Remplissez les champs nom et prénom ensuite cliquer sur valider.</figcaption>
+      <img src="/images/diaporama2.jpg" alt="Diaporama">
+    </figure>
+    <figure class="diaporama_img">
+      <figcaption>3. Signez et cliquer sur valider pour lancer la réservation.</figcaption>
+      <img src="/images/diaporama3.jpg" alt="Diaporama">
+    </figure>
+    <!-- Bouton previous et next -->
+    <div class="previous_next">
+      <div class="previous">
+        <i class="fas fa-chevron-left fa-2x"></i>
+      </div>
+      <div class="next">
+        <i class="fas fa-chevron-right fa-2x"></i>
+      </div>
+    </div>
+    <!-- Bouton play et pause -->
+    <div class="play_pause">
+      <div class="play">
+        <i class="fas fa-play fa-2x"></i>
+      </div>
+      <div class="pause">
+        <i class="fas fa-pause fa-2x"></i>
+      </div>
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div id="map"></div>
+
+  <!-- Panel -->
+  <div class="panel_station">
+    <form name="reservation" id="form">
+      <fieldset>
+        <legend>Détails de la station</legend>
+        <div class="info_station">
+          <input type="hidden" name="station" id="station_name">
+          <p class="address fields"></p>
+          <p class="places fields"></p>
+          <p class="available_bikes fields"></p>
+        </div>
+        <p>
+          <label for="firstName">Nom:</label>
+          <input type="text" name="nom" id="firstName" />
+          <span class="errorfirstname"></span>
+        </p>
+        <p>
+          <label for="lastName">Prénom:</label>
+          <input type="text" name="prenom" id="lastName" />
+          <span class="errorlastname"></span>
+        </p>
+        <input type="submit" value="Réserver" id="reserve_btn" />
+      </fieldset>
+    </form>
+    <!-- Canvas -->
+    <div class="canvas">
+      <span class="errorcanvas"></span>
+      <canvas id="sign"></canvas>
+      <p class="btn-canvas">
+        <input type="reset" value="Effacer" id="reset">
+        <input type="submit" value="Valider" id="valider">
+      </p>
+    </div>
+
+  </div>
+  <!-- Booking Panel -->
+  <div class="booking_panel">
+    <p class="message_reservation"></p>
+    <p class="timer_reservation"></p>
+  </div>
+</body>
+
+</html>
