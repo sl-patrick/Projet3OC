@@ -1,5 +1,5 @@
 # Velolib Projet 3 (OpenClassrooms)
->Développement d'une application en Javascript Orientée Objet de type Single page Application simulant la réservation de vélos dans une ville. La localisation et l'état de chaque station est fourni par via l'API JC Decaux et la carte est fourni par l'API de cartographie LeafletJS.
+>Développement d'une application en Javascript Orientée Objet de type Single page Application simulant la réservation de vélos dans une ville. La localisation et l'état de chaque station sont fournis par via l'API JC Decaux et la carte est fournie par l'API de cartographie LeafletJS.
 >
 >[Velolib](https://velolib.psamelhori.fr/)
 
